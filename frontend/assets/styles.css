@@ -1,0 +1,1124 @@
+/* ==========================================================
+   BUSINESS AUTOMATION AI
+   Enterprise Dashboard Theme
+   Author : ChatGPT
+========================================================== */
+
+
+/* ==========================================================
+   IMPORT FONT
+========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+
+
+/* ==========================================================
+   ROOT COLORS
+========================================================== */
+
+:root{
+
+    --background:#051834;
+
+    --sidebar:#131A24;
+
+    --card:#1B2330;
+
+    --card-hover:#243041;
+
+    --border:#2F3C4E;
+
+    --primary:#00C853;
+
+    --secondary:#00B8FF;
+
+    --warning:#FFB300;
+
+    --danger:#FF5252;
+
+    --text:#FFFFFF;
+
+    --subtext:#E2E8F0;
+
+    --shadow:0px 10px 25px rgba(0,0,0,.35);
+
+}
+
+
+/* ==========================================================
+   GLOBAL
+========================================================== */
+
+html,
+body,
+[class*="css"]{
+
+    font-family:'Inter',sans-serif;
+
+}
+
+
+.stApp{
+
+    background:var(--background);
+
+    color:var(--text);
+
+}
+
+
+.block-container{
+
+    padding-top:0rem;
+
+    padding-left:2rem;
+
+    padding-right:2rem;
+
+}
+
+
+/* ==========================================================
+   SIDEBAR
+========================================================== */
+
+section[data-testid="stSidebar"]{
+
+    background:var(--sidebar);
+
+    border-right:1px solid var(--border);
+
+}
+
+
+section[data-testid="stSidebar"] *{
+
+    color:white !important;
+
+}
+
+
+section[data-testid="stSidebar"] .stButton>button{
+
+    width:100%;
+
+}
+
+
+/* ==========================================================
+   SCROLLBAR
+========================================================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+
+::-webkit-scrollbar-track{
+
+    background:#111827;
+
+}
+
+
+::-webkit-scrollbar-thumb{
+
+    background:#374151;
+
+    border-radius:10px;
+
+}
+
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#4B5563;
+
+}
+
+
+/* ==========================================================
+   PAGE TITLE
+========================================================== */
+
+.page-title{
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:white;
+
+    margin-bottom:5px;
+
+}
+
+
+.page-subtitle{
+
+    color:var(--subtext);
+
+    font-size:15px;
+
+    margin-bottom:25px;
+
+}
+
+
+.section-title{
+
+    font-size:22px;
+
+    color:var(--secondary);
+
+    font-weight:600;
+
+    margin-top:15px;
+
+    margin-bottom:15px;
+
+}
+
+
+/* ==========================================================
+   HEADER BAR
+========================================================== */
+
+.dashboard-header{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:18px 25px;
+
+    margin-bottom:25px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.dashboard-header h1{
+
+    color:white;
+
+    margin:0;
+
+    font-size:30px;
+
+}
+
+
+.dashboard-header p{
+
+    margin-top:5px;
+
+    color:var(--subtext);
+
+}
+
+
+/* ==========================================================
+   KPI CARD
+========================================================== */
+
+.metric-card{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:20px;
+
+    box-shadow:var(--shadow);
+
+    transition:all .3s ease;
+
+    cursor:pointer;
+
+    height:160px;
+
+}
+
+
+.metric-card:hover{
+
+    transform:translateY(-6px);
+
+    background:var(--card-hover);
+
+}
+
+
+.metric-icon{
+
+    font-size:28px;
+
+    margin-bottom:12px;
+
+}
+
+
+.metric-title{
+
+    color:var(--subtext);
+
+    font-size:14px;
+
+    font-weight:500;
+
+}
+
+
+.metric-value{
+
+    color:white;
+
+    font-size:34px;
+
+    font-weight:700;
+
+    margin-top:10px;
+
+}
+
+
+.metric-growth{
+
+    margin-top:12px;
+
+    color:var(--primary);
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+
+/* ==========================================================
+   REPORT CARD
+========================================================== */
+
+.report-card{
+
+    background:var(--card);
+
+    border-radius:18px;
+
+    border:1px solid var(--border);
+
+    padding:22px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+/* ==========================================================
+   STREAMLIT METRIC
+========================================================== */
+
+div[data-testid="metric-container"]{
+
+    background:var(--card);
+
+    border-radius:18px;
+
+    border:1px solid var(--border);
+
+    padding:15px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+.stButton>button{
+
+    width:100%;
+
+    height:46px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:linear-gradient(
+        90deg,
+        #00C853,
+        #00E676
+    );
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+.stButton>button:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0px 0px 18px rgba(0,200,83,.45);
+
+}
+
+
+/* ==========================================================
+   TEXT INPUT
+========================================================== */
+
+.stTextInput input{
+
+    background:#202B38;
+
+    color:white;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    font-weight:500;
+
+}
+
+
+.stTextInput input::placeholder{
+
+    color:#CBD5E1;
+
+}
+
+
+/* ==========================================================
+   NUMBER INPUT
+========================================================== */
+
+.stNumberInput input{
+
+    background:#202B38;
+
+    color:white;
+
+    border-radius:12px;
+
+    border:1px solid var(--border);
+
+}
+
+
+/* ==========================================================
+   SELECTBOX
+========================================================== */
+
+.stSelectbox div[data-baseweb="select"]{
+
+    background:#202B38;
+
+    border-radius:12px;
+
+    border:1px solid var(--border);
+
+}
+
+
+/* ==========================================================
+   DATE INPUT
+========================================================== */
+
+.stDateInput{
+
+    background:#202B38;
+
+    border-radius:12px;
+
+}
+
+
+/* ==========================================================
+   CHECKBOX
+========================================================== */
+
+.stCheckbox{
+
+    color:white;
+
+}
+
+/* ==========================================================
+   ALERT CARDS
+========================================================== */
+
+.success-card{
+
+    background:#143D2A;
+
+    border-left:5px solid #00E676;
+
+    color:white;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    margin-bottom:12px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.warning-card{
+
+    background:#4B3609;
+
+    border-left:5px solid #FFB300;
+
+    color:white;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    margin-bottom:12px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.danger-card{
+
+    background:#4A1F24;
+
+    border-left:5px solid #FF5252;
+
+    color:white;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    margin-bottom:12px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+/* ==========================================================
+   BADGES
+========================================================== */
+
+.badge{
+
+    display:inline-block;
+
+    padding:5px 14px;
+
+    border-radius:30px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+.badge-success{
+
+    background:#00C853;
+
+    color:white;
+
+}
+
+.badge-warning{
+
+    background:#FFB300;
+
+    color:black;
+
+}
+
+.badge-danger{
+
+    background:#FF5252;
+
+    color:white;
+
+}
+
+.badge-info{
+
+    background:#00B8FF;
+
+    color:white;
+
+}
+
+
+/* ==========================================================
+   CHART CARD
+========================================================== */
+
+.chart-card{
+
+    background:var(--card);
+
+    border-radius:18px;
+
+    border:1px solid var(--border);
+
+    padding:20px;
+
+    margin-bottom:20px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.chart-title{
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:white;
+
+    margin-bottom:15px;
+
+}
+
+
+/* ==========================================================
+   DATAFRAME
+========================================================== */
+
+[data-testid="stDataFrame"]{
+
+    background:var(--card);
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+/* ==========================================================
+   TABLE
+========================================================== */
+
+table{
+
+    color:white !important;
+
+}
+
+thead tr{
+
+    background:#253244 !important;
+
+}
+
+tbody tr{
+
+    background:#1B2330 !important;
+
+}
+
+tbody tr:hover{
+
+    background:#243041 !important;
+
+}
+
+
+/* ==========================================================
+   PLOTLY CHARTS
+========================================================== */
+
+.js-plotly-plot{
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+}
+
+
+/* ==========================================================
+   AI ASSISTANT
+========================================================== */
+
+.ai-container{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:20px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.ai-user{
+
+    background:#043e89;
+
+    color:white;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    margin-bottom:12px;
+
+}
+
+.ai-response{
+
+    background:#123D2C;
+
+    color:white;
+
+    padding:15px;
+
+    border-radius:15px;
+
+}
+
+
+/* ==========================================================
+   LOW STOCK CARD
+========================================================== */
+
+.stock-card{
+
+    background:#402E0A;
+
+    border-left:5px solid #FFB300;
+
+    border-radius:15px;
+
+    padding:18px;
+
+    margin-bottom:15px;
+
+    color:white;
+
+    box-shadow:var(--shadow);
+
+}
+
+.stock-title{
+
+    font-size:17px;
+
+    font-weight:600;
+
+}
+
+.stock-value{
+
+    font-size:26px;
+
+    font-weight:700;
+
+    color:#FFD54F;
+
+}
+
+
+/* ==========================================================
+   TIMELINE
+========================================================== */
+
+.timeline{
+
+    border-left:3px solid #00B8FF;
+
+    margin-left:10px;
+
+    padding-left:20px;
+
+}
+
+.timeline-item{
+
+    position:relative;
+
+    margin-bottom:22px;
+
+}
+
+.timeline-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-30px;
+
+    top:6px;
+
+    width:14px;
+
+    height:14px;
+
+    border-radius:50%;
+
+    background:#00C853;
+
+}
+
+.timeline-time{
+
+    color:#F1F5F9;
+
+    font-size:12px;
+
+}
+
+.timeline-title{
+
+    color:white;
+
+    font-weight:600;
+
+}
+
+.timeline-description{
+
+    color:#B0BEC5;
+
+}
+
+
+/* ==========================================================
+   PROGRESS BAR
+========================================================== */
+
+.stProgress>div>div{
+
+    background:#00C853;
+
+}
+
+
+/* ==========================================================
+   TABS
+========================================================== */
+
+button[data-baseweb="tab"]{
+
+    background:#1B2330;
+
+    color:white;
+
+    border-radius:10px;
+
+    margin-right:6px;
+
+    padding:10px 18px;
+
+    border:1px solid var(--border);
+
+}
+
+button[data-baseweb="tab"]:hover{
+
+    background:#243041;
+
+}
+
+button[aria-selected="true"]{
+
+    background:#00B8FF !important;
+
+    color:white !important;
+
+}
+
+
+/* ==========================================================
+   EXPANDER
+========================================================== */
+
+.streamlit-expanderHeader{
+
+    background:#1B2330;
+
+    border-radius:12px;
+
+    color:white;
+
+}
+
+.streamlit-expanderContent{
+
+    background:#161D28;
+
+}
+
+
+/* ==========================================================
+   INFO BOX
+========================================================== */
+
+.info-box{
+
+    background:#1B2330;
+
+    border-left:5px solid #00B8FF;
+
+    border-radius:15px;
+
+    padding:18px;
+
+    color:white;
+
+}
+
+
+/* ==========================================================
+   LOADING CARD
+========================================================== */
+
+.loading-card{
+
+    background:#1B2330;
+
+    border-radius:15px;
+
+    padding:25px;
+
+    text-align:center;
+
+}
+
+
+/* ==========================================================
+   DIVIDER
+========================================================== */
+
+hr{
+
+    border:0;
+
+    border-top:1px solid #2E3A4D;
+
+    margin-top:25px;
+
+    margin-bottom:25px;
+
+}
+
+
+/* ==========================================================
+   ANIMATIONS
+========================================================== */
+
+.metric-card,
+.report-card,
+.chart-card{
+
+    animation:fadeUp .45s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.03);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+.success-card:hover,
+.warning-card:hover,
+.danger-card:hover{
+
+    animation:pulse .5s ease;
+
+}
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.footer{
+
+    text-align:center;
+
+    color:#E2E8F0;
+
+    padding:25px;
+
+    font-size:13px;
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width:1200px){
+
+    .metric-card{
+
+        height:auto;
+
+    }
+
+}
+
+@media (max-width:992px){
+
+    .block-container{
+
+        padding-left:1rem;
+
+        padding-right:1rem;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .page-title{
+
+        font-size:26px;
+
+    }
+
+    .metric-value{
+
+        font-size:28px;
+
+    }
+
+    .dashboard-header{
+
+        padding:16px;
+
+    }
+
+}
+
+@media (max-width:576px){
+
+    .metric-card{
+
+        padding:16px;
+
+    }
+
+    .report-card{
+
+        padding:16px;
+
+    }
+
+    .chart-card{
+
+        padding:16px;
+
+    }
+
+}
+
+/* Streamlit metric values */
+[data-testid="stMetricValue"] {
+    color: rgb(171, 128, 19) !important;
+    font-size: 48px !important;
+    font-weight: 700 !important;
+}
+
+/* Streamlit metric labels */
+[data-testid="stMetricLabel"] {
+    color: #B0BEC5 !important;
+    font-size: 16px !important;
+}
+
+/* Metric delta (if shown) */
+[data-testid="stMetricDelta"] {
+    color: #00E676 !important;
+}
+
+header[data-testid="stHeader"]{
+    display:none;
+}
+
+div[data-testid="stToolbar"]{
+    display:none;
+}
+
+/* Labels for TextInput, NumberInput, SelectBox, TextArea */
+.stTextInput label,
+.stNumberInput label,
+.stSelectbox label,
+.stTextArea label,
+.stDateInput label {
+    color: white !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+}
