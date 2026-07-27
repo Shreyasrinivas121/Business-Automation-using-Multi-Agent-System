@@ -78,9 +78,10 @@ def approve_order(
     db.commit()
 
     log_activity(
-        db,
-        order.business_id,
-        f"Approved Purchase Order #{order.order_id}"
+        db=db,
+    user_id=1,  # Replace with logged-in user's ID later
+    business_id=order.business_id,
+    action=f"Approved Purchase Order #{order.order_id}"
     )
 
     return {

@@ -322,7 +322,8 @@ def show_dashboard():
             result = requests.post(
                 "http://127.0.0.1:8000/ask-ai",
                 json={
-                    "question": question
+                    "question": question,
+                    "business_id": st.session_state.business_id
                 }
             ).json()
 

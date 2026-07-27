@@ -29,7 +29,7 @@ from components.customer_churn import (
     show_customer_churn
 )
 from components.register_business import show_register_business
-
+from components.about_project import show_about_project
  
 
 # ==================================
@@ -96,6 +96,12 @@ if "username" not in st.session_state:
 
 if "user_id" not in st.session_state:
     st.session_state.user_id = None
+    
+if "page" not in st.session_state:
+    st.session_state.page = "login"    
+    
+if "show_about" not in st.session_state:
+    st.session_state.show_about = False    
 
 # ==================================
 # LOGIN PAGE
@@ -103,6 +109,16 @@ if "user_id" not in st.session_state:
 
 if not st.session_state.logged_in:
 
+    if st.session_state.show_about:
+
+        show_about_project()
+
+        if st.button("⬅ Back to Login"):
+            st.session_state.show_about = False
+            st.rerun()
+
+        st.stop()
+    
     set_login_background()
 
     st.markdown(
@@ -339,8 +355,7 @@ if not st.session_state.logged_in:
                 margin-bottom:25px;">
             """,
             unsafe_allow_html=True
-        )
-
+        ) 
 
     email = st.text_input(
         "Email",
@@ -352,6 +367,23 @@ if not st.session_state.logged_in:
         type="password",
         placeholder="Enter your password"
     )
+    
+# -------------------------------
+# About Platform Button
+# -------------------------------
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    left, middle, right = st.columns([1, 2, 1])
+
+    with middle:
+
+        if st.button(
+        "📖 Learn About Platform",
+        width="stretch"
+    ):
+            st.session_state.show_about = True
+            st.rerun()
 
     st.markdown("<br>", unsafe_allow_html=True)
 

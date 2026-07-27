@@ -6,6 +6,7 @@ from app.agents.monitoring_agent import log_activity
 def process_bill(
     db,
     bill_id,
+    business_id,
     products_used,
     subtotal,
     tax
@@ -25,9 +26,10 @@ def process_bill(
     )
 
     log_activity(
-        db,
-        1,
-        f"Generated Bill #{bill_id}"
+        db=db,
+        user_id=1,                # Default admin
+        business_id=business_id,
+        action=f"Generated Bill #{bill_id}"
     )
 
     return grand_total

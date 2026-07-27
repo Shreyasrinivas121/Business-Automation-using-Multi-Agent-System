@@ -125,6 +125,7 @@ def create_bill(
     grand_total = process_bill(
         db=db,
         bill_id=bill.bill_id,
+        business_id=bill.business_id,
         products_used=products_used,
         subtotal=subtotal,
         tax=tax

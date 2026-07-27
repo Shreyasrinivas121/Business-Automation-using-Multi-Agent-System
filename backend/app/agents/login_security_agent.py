@@ -38,6 +38,7 @@ def record_failed_login(
             create_alert(
                 db=db,
                 user_id=None,
+                business_id=user.business_id if user else None,
                 alert_type="Admin Login Attack",
                 message=f"Someone is trying to access admin account ({email})",
                 severity="High",
@@ -53,6 +54,7 @@ def record_failed_login(
             create_alert(
                 db=db,
                 user_id=user.id if user else None,
+                business_id=user.business_id if user else None,
                 alert_type="User Login Attack",
                 message=f"{email} exceeded allowed login failures",
                 severity="High",

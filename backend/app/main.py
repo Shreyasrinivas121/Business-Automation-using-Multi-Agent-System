@@ -21,6 +21,9 @@ from app.routes import order_approval
 from app.routes import security_actions
 from app.routes import inventory_scan
 from app.routes import profit_analytics
+from fastapi.exceptions import RequestValidationError
+from fastapi.responses import JSONResponse
+from fastapi import Request
 
 app = FastAPI()
 
@@ -51,3 +54,16 @@ def home():
     return {
         "message": "Business Automation API Running"
     }
+    
+@app.exception_handler(RequestValidationError)
+async def validation_exception_handler(request: Request, exc: RequestValidationError):
+    print("========== VALIDATION ERROR ==========")
+    print(exc.errors())
+    print(await request.body())
+
+    return JSONResponse(
+        status_code=422,
+        content={
+            "detail": exc.errors()
+        }
+    )    

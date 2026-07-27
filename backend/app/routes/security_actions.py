@@ -34,9 +34,10 @@ def resolve_alert(
     db.commit()
 
     log_activity(
-        db,
-        1,
-        f"Resolved Security Alert #{alert_id}"
+        db=db,
+        user_id=1,
+        business_id=alert.business_id,
+        action=f"Resolved Alert #{alert_id}"
     )
 
     return {

@@ -43,9 +43,10 @@ def create_staff(
     db.refresh(new_staff)
 
     log_activity(
-        db,
-        new_staff.id,
-        f"Created Staff User: {new_staff.username}"
+        db=db,
+    user_id=new_staff.id,
+    business_id=new_staff.business_id,
+    action=f"Created Staff User: {new_staff.username}"
     )
 
     return {
@@ -98,9 +99,10 @@ def delete_staff(
     try:
 
         log_activity(
-            db,
-            staff_user_id,
-            f"Deleted Staff User: {staff_name}"
+            db=db,
+    user_id=staff_user_id,
+    business_id=business_id,
+    action=f"Deleted Staff User: {staff_name}"
         )
 
     except:
